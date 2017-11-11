@@ -39,7 +39,9 @@ for s in fileNameStrings {
     if com.count == 2 {
         var file = com[1].replacingOccurrences(of: "\t", with: "")
         file = file.replacingOccurrences(of: ".gz", with: "")
-        fileNames[com[0]] = file
+        
+        let region = com[0].replacingOccurrences(of: " - Rest of World", with: "")
+        fileNames[region] = file
     }
 }
 
