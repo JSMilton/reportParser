@@ -28,8 +28,6 @@ for i in 3..<array.count {
     exchangeRates[cols[0]] = Double(num)
 }
 
-print(exchangeRates)
-
 let summaryFile = try! String(contentsOfFile: curDir + "/Summary.csv")
 var fileNameStrings = summaryFile.components(separatedBy: "\n")
 fileNameStrings.removeFirst()
@@ -44,8 +42,6 @@ for s in fileNameStrings {
         fileNames[com[0]] = file
     }
 }
-
-print(fileNames)
 
 var total = 0.0
 
@@ -66,7 +62,6 @@ for (region, fileName) in fileNames {
             let exRate = exchangeRates[region]!
             let amount = Double(cols[shareIndex])! * exRate
             total += amount
-            print(amount)
         }
     }
 }
